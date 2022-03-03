@@ -1,3 +1,0 @@
-D:/StudentWork/siaod/Task1/first/cmake-build-debug/CMakeFiles/first.dir
-D:/StudentWork/siaod/Task1/first/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/StudentWork/siaod/Task1/first/cmake-build-debug/CMakeFiles/rebuild_cache.dir
