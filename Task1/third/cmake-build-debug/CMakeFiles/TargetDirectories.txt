@@ -1,0 +1,3 @@
+D:/StudentWork/siaod/Task1/third/cmake-build-debug/CMakeFiles/third.dir
+D:/StudentWork/siaod/Task1/third/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/StudentWork/siaod/Task1/third/cmake-build-debug/CMakeFiles/rebuild_cache.dir
