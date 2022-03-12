@@ -1,10 +1,43 @@
-//вариант 3
+//вариант 23 Текст вводится как последовательность символов, заканчивающаяся точкой. Определить количество различных пар букв в этом тесте.
 
 #include <iostream>
 #include <windows.h>
 #include <vector>
 using namespace std;
 
+bool check(vector<string> x, string s) {
+    for (auto & i : x) {
+        if (i == s) return false;
+    }
+    return true;
+}
+
+
+int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    string row, s;
+
+    vector<string> x;
+
+    cout << "Введите строку:" << endl;
+    cin >> row;
+    for (int i = 0; i < row.length() - 1; ++i) {
+        if (int(row[i]) >= 97 && int(row[i]) <= 122 && int(row[i + 1]) >= 97 && int(row[i + 1]) <= 122) {
+            s = row[i] + row[i + 1];
+            if (check(x, s)) {
+                x.push_back(s);
+            }
+        }
+    }
+    cout << x.size() << endl;
+
+
+
+
+    return 0;
+}
+
+/*
 #define Rows 10
 #define Cows 10
 
@@ -89,3 +122,4 @@ int main() {
 
     return 0;
 }
+*/
