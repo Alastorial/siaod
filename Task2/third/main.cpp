@@ -1,3 +1,5 @@
+//вариант 3
+
 #include <iostream>
 #include <windows.h>
 #include <vector>
