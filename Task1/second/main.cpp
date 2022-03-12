@@ -72,6 +72,7 @@ void delete5(long a[], int* n) {
         }
     }
 
+
     output(a, *n, "Новый массив: ");
 }
 

@@ -96,5 +96,7 @@ int main() {
 
     arr = delete5(arr);
     output(arr, "Новый вектор после чистки: ");
+    cout << "liza_DrugDiller" << endl;
     return 0;
 }
+
