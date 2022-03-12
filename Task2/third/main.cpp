@@ -1,20 +1,22 @@
 #include <iostream>
 #include <windows.h>
+#include <vector>
 using namespace std;
 
 #define Rows 10
 #define Cows 10
 
-void input(int **x, int n, int m) {
+vector<vector<int>> input(vector<vector<int>> x, int n, int m) {
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
             cout << "x[" << i << "][" << j << "] = ";
             cin >> x[i][j];
         }
     }
+    return x;
 }
 
-void output(int **x, int n, int m) {
+void output(vector<vector<int>> x, int n, int m) {
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
             cout << x[i][j] << " ";
@@ -23,31 +25,30 @@ void output(int **x, int n, int m) {
     }
 }
 
-void randGen(int **l, int n, int m) {
+vector<vector<int>> randGen(vector<vector<int>> l, int n, int m) {
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
             l[i][j] = rand();
         }
     }
+    return l;
 }
 
 
-void suMatrix(int **x, int **y, int n, int m) {
+vector<vector<int>> suMatrix(vector<vector<int>> x, vector<vector<int>> y, int n, int m) {
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
             x[i][j] = x[i][j] + y[i][j];
         }
     }
+    return x;
 }
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     int flag;
-    int **x = new int*[Cows];
-    for (int i = 0; i < Rows; ++i) x[i] = new int[Cows];
-
-    int **y = new int*[Cows];
-    for (int i = 0; i < Rows; ++i) y[i] = new int[Cows];
+    vector<vector<int>> x(Rows, vector<int>(Cows));
+    vector<vector<int>> y(Rows, vector<int>(Cows));
 
     int n, m;
     cout << "Ведите через пробел размерность матрицы: " << endl;
@@ -56,10 +57,10 @@ int main() {
         cout << "Как Вы хотите заполнить матрицу ? 0 - самостоятельно, 1 - автоматически" << endl;
         cin >> flag;
         if (flag == 0) {
-            input(x, n, m);
+            x = input(x, n, m);
             break;
         } else if (flag == 1) {
-            randGen(x, n, m);
+            x = randGen(x, n, m);
             break;
         }
     }
@@ -71,16 +72,16 @@ int main() {
         cout << "Как Вы хотите заполнить вторую матрицу ? 0 - самостоятельно, 1 - автоматически " << endl;
         cin >> flag;
         if (flag == 0) {
-            input(y, n, m);
+            y = input(y, n, m);
             break;
         } else if (flag == 1) {
-            randGen(y, n, m);
+            y = randGen(y, n, m);
             break;
         }
     }
     output(y, n, m);
 
-    suMatrix(x, y, n, m);
+    x = suMatrix(x, y, n, m);
     cout << "Итоговая матрица: " << endl;
     output(x, n, m);
 
